@@ -1,7 +1,7 @@
-from BusinessLogic import VehicleData
-from BusinessLogic import Storage
+from BusinessLogic import VehicleEntity
+from BusinessLogic import StorageInterface
 
-class VehiclePersistency(Storage.Storage):
+class VehiclePersistency(StorageInterface.IStorage):
     def Save(self, vehicleData):
         with open('database.txt', 'a') as file:
             file.write(f"{vehicleData.registration_number}, {vehicleData.model}, {vehicleData.type}, {vehicleData.name}, {vehicleData.address}\n")
@@ -11,5 +11,5 @@ class VehiclePersistency(Storage.Storage):
             for line in file:
                 data = line.strip().split(', ')
                 if data[0] == registrationNumber:
-                    return VehicleData.VehicleData(data[0], data[1], data[2], data[3], data[4])
+                    return VehicleEntity.VehicleEntity(data[0], data[1], data[2], data[3], data[4])
         return None

@@ -1,9 +1,9 @@
-from BusinessLogic import VehicleData
+from BusinessLogic import VehicleEntity
 
-class UI:
+class VehicleUI:
     BL = 0
-    def __init__(self, businessLogic):
-        self.BL = businessLogic
+    def __init__(self, VehicleBL):
+        self.BL = VehicleBL
         self.DisplayMainMenu()
 
     def DisplayMainMenu(self):
@@ -26,7 +26,7 @@ class UI:
         type = input("Enter type: ")
         name = input("Enter owner's name: ")
         address = input("Enter owner's address: ")
-        record = VehicleData.VehicleData(reg_number, model, type, name, address)
+        record = VehicleEntity.VehicleEntity(reg_number, model, type, name, address)
         self.BL.RegisterVehicle(record)
 
     def _GetVehicleInfo(self):

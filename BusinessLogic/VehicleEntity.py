@@ -1,4 +1,4 @@
-class VehicleData:
+class VehicleEntity:
     def __init__(self, registration_number, model, type, name, address):
         self.registration_number = registration_number
         self.model = model

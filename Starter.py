@@ -1,8 +1,8 @@
-from UserInterface import UserInterface
-from BusinessLogic import BusinessLogic
-from Persistency import Persistency
+from UserInterface import VehicleUI
+from BusinessLogic import VehicleBL
+from Persistency import VehiclePersistency
 
 if __name__ == "__main__":
-    persistency = Persistency.VehiclePersistency()
-    businessLogic = BusinessLogic.VehicleBL(persistency)
-    UserInterface.UI(businessLogic)
+    persistency = VehiclePersistency.VehiclePersistency()
+    businessLogic = VehicleBL.VehicleBL(persistency)
+    VehicleUI.VehicleUI(businessLogic)
